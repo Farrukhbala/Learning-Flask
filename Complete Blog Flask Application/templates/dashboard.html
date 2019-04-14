@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+
+  <h1>Welcome to Dashboard {{session.username | title}}</h1>
+
+  <hr>
+
+
+  <table class="table table-striped">
+
+    <tr>
+
+      <th>ID</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+
+    {% for article in _articles %}
+
+    <tr>
+      <td>{{article.id}}</td>
+      <td>{{article.title}}</td>
+      <td>{{article.author}}</td>
+      <td>{{article.dateTime}}</td>  
+      <td>
+          <a href="/edit_article/{{article.id}}" class="btn btn-info">Edit</a></td>
+      <td>
+          <a href="#" class="btn btn-danger"> Delete </a></td>    
+    </tr>
+
+    {% endfor %}
+
+
+
+  </table>
+  
+  <a href="/add_article" class="btn btn-primary"> Add Article</a>
+
+</div>
+
+{% endblock %}
