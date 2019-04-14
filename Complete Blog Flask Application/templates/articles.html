@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+ <ul class="list-group">
+   {% for article in _articles %}
+   <a href="/article/{{article.id}}">
+    
+    <li class="list-group-item" >
+      {{article.title}} | {{article.author | title}}
+      
+    </li>
+
+  </a>
+  {% endfor %}
+ </ul>
+
+</div>
+
+{% endblock %}

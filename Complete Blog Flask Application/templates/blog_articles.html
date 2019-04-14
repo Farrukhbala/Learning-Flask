@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron">
+
+  <h1>{{data_article.title}}</h1>
+  <small>Written By {{data_article.author}} on  {{data_article.dateTime }}</small>
+  
+  <hr>
+<div>
+  {{data_article.body | safe}}
+</div>
+</div>
+
+{% endblock %}
